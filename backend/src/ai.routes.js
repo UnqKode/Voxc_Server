@@ -1,5 +1,5 @@
 import express, { response } from "express"
-import askGemini from "../google/google.js";
+import askGemini from "./google.js";
 
 
 const router = express.Router()
@@ -9,7 +9,7 @@ router.post("/aiTalk", async (req, res) => {
         console.log("🧠 AI talks here:", req.body.message); 
         let response;
         if(req.body.message){
-            response = await askGemini(req.body.message);
+            response = await askGemini(req.body.message,req.body.apiKey);
         }
         console.log("hi:", response);
         

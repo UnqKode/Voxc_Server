@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import aiRoutes from "./routes/ai.routes.js"
+import aiRoutes from "./ai.routes.js"
 
 dotenv.config();
 const port = process.env.PORT || 3000;

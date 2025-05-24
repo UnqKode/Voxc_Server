@@ -3,18 +3,18 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const ai = new GoogleGenerativeAI(process.env.API_KEY);
 
-async function askGemini(prompt, options = {}) {
+async function askGemini(prompt, apiKey) {
   if (!prompt || typeof prompt !== "string" || prompt.trim() === "") {
     console.log("Prompt must be a non-empty string.");
     return;
   }
-
+  const key = apiKey || process.env.API_KEY;
+  const ai = new GoogleGenerativeAI(key);
+  
   try {
     const model = ai.getGenerativeModel({ model: "gemini-2.0-flash",
       generationConfig: {
-        maxOutputTokens: options.maxTokens || 200,
         temperature: options.temperature || 0.7,
         topP: options.topP || 1.0,
         stopSequences: options.stopSequences || []
