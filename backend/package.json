@@ -1,19 +1,17 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Proxy Server",
+  "description": "Proxy Server for Voxc",
   "main": "src/index.js",
+  "type": "module",
   "scripts": {
     "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
-    "build": "echo 'No build step required'"
+    "dev": "nodemon src/index.js"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": "18.x"
   },
-  "author": "",
-  "type": "module",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@google/genai": "^0.6.1",
     "@google/generative-ai": "^0.24.0",
